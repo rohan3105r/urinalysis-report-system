@@ -1,0 +1,192 @@
+K. J. Somaiya School of Engineering, Mumbai-77
+(Somaiya Vidyavihar University)
+Department of Computer Engineering
+
+Department of Computer Engineering
+FSDL_Java 26-27
+
+Title: Urinalysis Report Management and Decision-Support System
+AIM: To convert the selected institute AI case study into a focused full-stack MVP and establish the first working React → Spring Boot → MongoDB workflow for urinalysis reporting and decision support.
+
+Objectives:
+- To define a focused problem statement, users and core features for the urinalysis case study.
+- To design the architecture, entities and REST API requirements for the system.
+- To organize the project repository into separate frontend and backend modules.
+- To implement one end-to-end workflow with persistent data storage.
+- To specify the planned AI/intelligent decision-support feature and its integration point for a later phase.
+
+Resources used:
+Tools and Technologies Used
+- Frontend: React, JavaScript, HTML and CSS
+- Backend: Java 17, Spring Boot 3.x and REST APIs
+- Database: MongoDB Community Server running locally
+- Version Control: Git and GitHub (project organized for repository-based collaboration)
+- Development Tools: Visual Studio Code, Maven, browser, Postman/Swagger as required
+- Project Context: AI case study selected by the team for urinalysis result interpretation and reporting support
+
+Expected Outcome of Phase 1:
+Batch: FSDL_Java 26-27          Roll No.: [Student Roll No.]
+Experiment / assignment / tutorial No.: Phase 1 – Full-Stack MVP Definition and Foundation
+
+CO3: Integrate front-end and back-end components using APIs and state management techniques.
+CO4: Design, develop, and query relational and NoSQL databases for full-stack applications.
+
+Students will be able to define a manageable MVP for the selected case study, design its full-stack architecture and data/API model, and demonstrate one working React → Spring Boot → Database workflow committed to the project repository.
+
+Outputs to be attached / recorded:
+1. Project title and selected institute case study/use-case ID.
+2. One-sentence MVP statement, user roles and 3–5 core features.
+3. Architecture diagram showing React, Spring Boot, database and planned AI/intelligent component.
+4. Entity/resource design and REST endpoint table.
+5. GitHub repository link and evidence of meaningful commits.
+6. Screenshot of the working React interface.
+7. Evidence of a successful React → Spring Boot → Database operation and persistent record.
+8. Brief specification of the planned AI/intelligent feature and its integration point.
+
+Books/ Journals/ Websites referred:
+1. Course material and documentation for React, Spring Boot, database integration and REST APIs.
+2. MongoDB documentation for local database configuration and persistence.
+3. Java and Spring Boot learning resources covering REST controllers, validation and CRUD operations.
+4. Institute AI use-case material corresponding to the urinalysis report management case study.
+
+Pre Lab/ Prior Concepts:
+React components and hooks, Spring Boot REST controllers, HTTP methods and JSON, database CRUD, Git/GitHub, and full-stack application integration.
+
+Project flow: User -> React Frontend -> Spring Boot REST API -> MongoDB, with an AI/intelligent component integrated at a suitable point in a later phase.
+
+Implementation Details:
+Phase 1 System Design
+Architecture: React frontend -> JSON/HTTP -> Spring Boot REST API -> persistent MongoDB database; planned AI/intelligent component -> result/advisory/classification -> application workflow.
+
+1. Project title, selected institute case study/use-case ID, one-sentence MVP statement, users and 3–5 core features.
+Project title: Urinalysis Report Management and Decision-Support System
+Selected institute case study / use-case: Urinalysis sample reporting and AI-assisted abnormality review support for laboratory workflows.
+Use-case ID: URI-AI-01 (Institute AI case study: Urinalysis decision support)
+
+MVP statement: The system allows laboratory staff to record urinalysis test results, view stored reports, and flag abnormal findings using a rule-based decision-support workflow so that clinically relevant variations can be reviewed quickly.
+
+Users:
+- Lab technician / sample entry operator
+- Clinician / doctor reviewing the report
+- Administrator or supervisor monitoring workflow status
+
+Core features:
+1. Enter and save urinalysis test details for a sample record.
+2. View the history of stored test reports in a searchable dashboard.
+3. Flag abnormal findings using a demonstration rule engine for pH, specific gravity, blood, protein, ketones, nitrite and leukocytes.
+4. Display patient-facing and clinician-facing summaries for each sample.
+5. Monitor dashboard counts for total tests, flagged tests and clear tests.
+
+2. Proposed architecture
+Architecture diagram:
+
+React Frontend (Vite + React)
+          |
+          | HTTP/JSON
+          v
+Spring Boot REST API (Java / REST Controller / Service / Repository)
+          |
+          | Persist / retrieve records
+          v
+MongoDB Database (urinalysis_tests collection)
+          ^
+          |
+Planned AI / Intelligent Component
+- Rule-based abnormality detection and review prioritization
+- Future extension: predictive classification or recommendation engine for abnormal urine patterns
+
+3. Main entities/resources
+Primary resource: UrinalysisTest
+Important fields:
+- id: unique record identifier
+- sampleId: sample reference number
+- testDate: date of test
+- ph: urine pH value
+- specificGravity: specific gravity reading
+- urineColor: observed urine appearance
+- glucose, protein, ketones, blood, nitrite, leukocytes: qualitative or semi-quantitative findings
+- flags: list of abnormal conditions detected by the rule engine
+- normalFindings: clinically reassuring findings
+- abnormalFindings: concerning findings
+- reviewStatus: No flags / Review recommended
+- priorityLevel: Low / Moderate / High
+- patientMessage: patient-friendly explanation
+- doctorSummary: clinician summary
+- notes: free-text observations
+- createdAt, updatedAt: record timestamps
+
+Secondary resources / concepts:
+- Patient record metadata (sample identification and test date)
+- Report summary object for dashboard statistics and flagged records
+
+4. REST endpoints for one primary resource
+Resource: UrinalysisTest
+
+| Method | Endpoint | Purpose |
+|--------|----------|---------|
+| GET | /api/tests | Fetch all urinalysis records |
+| GET | /api/tests/{id} | Fetch a single test record by ID |
+| POST | /api/tests | Create a new test record |
+| PUT | /api/tests/{id} | Update an existing record |
+| DELETE | /api/tests/{id} | Delete a record |
+| GET | /api/tests/stats | Get summary metrics such as total, flagged and clear tests |
+
+5. Repository organization and implementation
+The project was organized into two main modules:
+- backend/ – Spring Boot application with model, repository, controller and configurations
+- frontend/ – React + Vite user interface for data entry and reporting
+
+The backend exposes REST APIs and the frontend calls them using fetch requests to save and retrieve records.
+The application demonstrates one complete end-to-end workflow: form submission -> API call -> MongoDB persistence -> UI display and report summary.
+
+6. Artificial intelligence / intelligent feature specification
+Planned AI/intelligent feature:
+- Rule-based decision-support engine for urinalysis quality review and abnormality flagging
+- Inputs: pH, specific gravity, urine color and qualitative findings such as blood, protein, nitrite and leukocytes
+- Expected output: review status, priority level, flags, patientMessage and doctorSummary
+- User value: helps laboratory and clinical staff quickly identify samples requiring attention and review before manual interpretation
+- Proposed integration method: integrate the AI component as a service layer in Spring Boot before saving the record or as a post-processing step that augments the report summary in the frontend
+
+Steps for execution:
+1. Continue with the selected case study and freeze the MVP.
+2. Define the users and 3–5 core features for the urinalysis decision-support workflow.
+3. Design the architecture and identify the main data entities and API endpoints.
+4. Create separate frontend and backend folders and initialize the project structure.
+5. Implement the backend model, repository and controller and connect it to MongoDB.
+6. Build a React form and dashboard to create and display reports through the backend API.
+7. Demonstrate persistent storage and retrieval of data.
+8. Commit and push the working code and record the required evidence in the writeup.
+
+Conclusion:
+This Phase 1 project successfully defined the MVP for an urinalysis report management system, organized a full-stack React + Spring Boot + MongoDB workflow and implemented one working end-to-end feature for saving and displaying test records. The system focuses on the core operational need of recording urine sample results, reviewing abnormal findings, and generating a simple decision-support summary. The planned future AI feature can improve the system by adding intelligent classification and recommendation logic to support clinical review. The implemented version acts as a strong foundation for later phases, where the rule engine and later AI model can be expanded for deeper analysis and decision support.
+
+Postlab questions:
+
+1. What is the MVP of your selected case study, and which user problem does it solve?
+The MVP is a lightweight urinalysis reporting system that allows lab staff to capture sample test data, review abnormal findings, and generate a summary for further clinical attention. It solves the problem of manually tracking urine-test results and quickly identifying records that need review.
+
+2. Why did your team choose the implemented feature as the first end-to-end vertical slice?
+This feature is the most visible and essential workflow in the application: capturing a test result, persisting it in the database, and displaying it in the UI. It provides a complete backend-to-frontend data flow and demonstrates the core architecture of the project.
+
+3. Explain how data travels from the React interface to Spring Boot and the database in your implementation.
+The React frontend captures user input in a form, serializes it to JSON, and sends it to the Spring Boot REST API using fetch. The API controller validates the request and calls the repository to persist the record in MongoDB. When a user later fetches reports, the backend reads from MongoDB and returns the data to the React interface for display.
+
+4. Which entities/resources are central to the project, and why?
+The central resource is UrinalysisTest because it stores all the test values, computed flags, status, notes and summary messages. It contains the main operational data that drives both the dashboard and the decision-support function.
+
+5. What AI/intelligent functionality is planned, what inputs will it use, and what output will it produce?
+The planned intelligent feature is a decision-support layer that evaluates urinary findings and flags abnormal patterns. It will use inputs such as pH, specific gravity, blood, protein, nitrite, leukocytes and color. It will produce a review status, priority level, summary notes and recommendation support for further evaluation.
+
+6. Which parts of the final project remain to be implemented after Phase 1?
+The remaining work includes deeper AI or ML classification, user authentication and role-based access, stronger data validation, export/report generation, and full deployment configuration. Phase 1 establishes the MVP foundation and core data flow, while later phases can extend the system with more robust clinical decision support.
+
+Project title: Urinalysis Report Management and Decision-Support System
+Selected case study / use-case: Urinalysis sample interpretation and review workflow
+
+Implementation Summary:
+- Frontend: React with a dashboard, form, and search/history view
+- Backend: Spring Boot REST API with CRUD operations and stat generation
+- Database: MongoDB storing urine test records with metadata and flags
+- Demo intelligence: rule-based detection for abnormal findings and generated summaries
+
+This project qualifies as a functional Phase 1 MVP because it implements the core data flow, persistent storage, and a user interface for a real-world laboratory use case.
