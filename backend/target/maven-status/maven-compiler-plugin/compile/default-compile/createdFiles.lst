@@ -1,0 +1,4 @@
+edu\student\urinalysis\repository\UrinalysisTestRepository.class
+edu\student\urinalysis\model\UrinalysisTest.class
+edu\student\urinalysis\UrinalysisApplication.class
+edu\student\urinalysis\controller\UrinalysisTestController.class
